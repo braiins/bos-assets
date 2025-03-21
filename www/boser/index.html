@@ -1,0 +1,32 @@
+<!doctype html><html lang="en" style="background-color: #262626" class="br-theme-dark"><head><meta charset="UTF-8"/><meta name="google" value="notranslate"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><title>Braiins OS</title><script>/** Cache busting by appending changing of the URL (eg. query params) */
+            var l = document.createElement('link');
+            l.rel = "icon";
+            l.type = 'image/png';
+            l.href = '/var/favicon.png?v=' + Math.floor(Math.random() * 1e5);
+            document.getElementsByTagName("head")[0].appendChild(l);</script><script>/**
+             * - Cache busting by appending changing of the URL (eg. query params)
+             * - Log load/parse errors
+             */
+            var originalGlobalOnError = window.onerror;
+            function revertOnError() {
+                window.onerror = originalGlobalOnError;
+            }
+
+            var errorStyle = 'color: red; font-weight: bold; font-size: 14px;';
+            var s = document.createElement('script');
+            function handleError(e) {
+                console.group('%cFailed to load the branding file!', errorStyle);
+                console.log(e);
+                console.groupEnd();
+                revertOnError();
+            }
+
+            // Parsing exception don't trigger the "onerror" callback
+            // so we'll try to catch it in global error handler
+            // and revert cleanup once we know loading is done.
+            window.onerror = handleError;
+            s.onerror = handleError;
+            s.onload = revertOnError;
+
+            s.src = '/var/brand.js?v=' + Math.floor(Math.random() * 1e5);
+            document.getElementsByTagName("head")[0].appendChild(s);</script><meta name="build" hash="3636cd65f486b691" date="2025-02-19_08:13:42"><link href="/262.dafffb02c8ba3f15.css" rel="stylesheet"><link href="/app.9b16bfb14f711b74.css" rel="stylesheet"></head><body><div id="app"></div><script defer="defer" src="/176.2725b6f9d8ced5a5.js"></script><script defer="defer" src="/937.904d692ca256f733.js"></script><script defer="defer" src="/262.d9374ec11741531d.js"></script><script defer="defer" src="/app.b881743871b2f81d.js"></script></body></html>
